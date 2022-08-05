@@ -1,9 +1,25 @@
-{ "scripts": {
-  "test": "npx cypress run --record --key=773605ae-79d9-443c-b640-64acd29226ba"
-  
+{ 
+"name":"cypress-e2e-smoketest",
+"version": "1.0.0",
+"description": "E2E Automation Testing Cypress",
+"main": "index.js",  
+
+"scripts": {
+  "test":"test",
+  "cypress:open":"cypress open",
+  "cypress:runChromeHeadless":"cypress run --headless  --browser --spec cypress/e2e/SproutSmokeTest/*.cy.js --record --key 773605ae-79d9-443c-b640-64acd29226ba"
 },
+"keywords": [
+  "e2e",
+  "cypress",
+  "automation",
+  "framework"
+],
+"author":"MikeZhuang",
+"license": "ISC",
   "devDependencies": {
-    "cypress": "^10.4.0"
+    "cypress": "^10.4.0",
+    "cypress-grep":"^3.0.2" 
   }
  
 }
