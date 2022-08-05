@@ -7,7 +7,7 @@
 "scripts": {
   "test":"test",
   "cypress:open":"cypress open",
-  "cypress:runChromeHeadless":"cypress run --headless  --browser --spec cypress/e2e/SproutSmokeTest/*.cy.js --record --key 773605ae-79d9-443c-b640-64acd29226ba"
+  "cypress:runChromeHeadless":"cypress run --headless --browser --spec cypress/e2e/SproutSmokeTest/*.cy.js --record --key 773605ae-79d9-443c-b640-64acd29226ba"
 },
 "keywords": [
   "e2e",
