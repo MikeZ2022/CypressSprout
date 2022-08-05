@@ -22,7 +22,7 @@ describe('SproutSmokeTest',()=>{
         cy.wait(5000)
         cy.contains('Summary').click()   
         cy.contains('Permissions and roles').click()
-        cy.contains().should('exist')
+        cy.contains('Account users').should('exist')
         cy.contains('Data room')
         cy.contains('Settings') 
         cy.wait(2000)

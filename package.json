@@ -1,5 +1,9 @@
-{
+{ "scripts": {
+  "test": "npx cypress run --record --key=773605ae-79d9-443c-b640-64acd29226ba"
+  
+},
   "devDependencies": {
     "cypress": "^10.4.0"
   }
+ 
 }
