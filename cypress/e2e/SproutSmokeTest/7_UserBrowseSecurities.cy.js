@@ -36,5 +36,7 @@
         cy.contains('Equity Reports')
         cy.wait(1000)
         cy.contains('Board').click()
+        cy.clearCookies()
+        cy.getCookies().should('be.empty')
 })
 })
