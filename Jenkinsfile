@@ -13,8 +13,11 @@ def getBuildUser() {
 pipeline {
     //The agent section specifies where the entire Pipeline, or a specific stage, 
     //will execute in the Jenkins environment depending on where the agent section is placed.
-    agent any
-    
+    agent  {docker {
+            image 'node:6-alpine'
+            args '-p 3000:3000'
+        }
+    }
     //The environment directive specifies a sequence of key-value pairs which will be defined
     //as environment variables for all steps, or stage-specific steps, depending on where the environment directive is located within the Pipeline.
     environment {
@@ -35,14 +38,15 @@ pipeline {
         stage('Build'){
             //The steps section defines a series of one or more steps to be executed in a given stage directive.
             steps {
+                sh 'npm install'
                 echo "Building the application"
             }
         }
         
         stage('Testing') {
             steps {
-                bat "npm i"
-                bat "npx cypress run --headless --browser --spec cypress/e2e/SproutSmokeTest/*.cy.js --record --key 773605ae-79d9-443c-b640-64acd29226ba"
+                sh "npm install cypress"
+                sh "npx cypress run --headless --browser --spec cypress/e2e/SproutSmokeTest/*.cy.js --record --key 773605ae-79d9-443c-b640-64acd29226ba"
             }
         }
         
