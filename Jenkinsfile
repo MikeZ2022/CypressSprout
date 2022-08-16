@@ -13,10 +13,7 @@ def getBuildUser() {
 pipeline {
     //The agent section specifies where the entire Pipeline, or a specific stage, 
     //will execute in the Jenkins environment depending on where the agent section is placed.
-    agent  {docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
-        }
+    agent  {
     }
     //The environment directive specifies a sequence of key-value pairs which will be defined
     //as environment variables for all steps, or stage-specific steps, depending on where the environment directive is located within the Pipeline.
@@ -32,14 +29,15 @@ pipeline {
         choice(name: 'BROWSER', choices: ['chrome', 'edge'], description: 'Pick the web browser you want to use to run your scripts')
     }
     
-
+    tools {
+        nodejs "Recent NodeJS"
+        }
     stages {
         
         stage('Build'){
             //The steps section defines a series of one or more steps to be executed in a given stage directive.
             steps {
-                sh 'npm install'
-                echo "Building the application"
+               
             }
         }
         
