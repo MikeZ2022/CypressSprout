@@ -16,8 +16,10 @@ describe('SproutSmokeTest',()=>{
     it('1.1 User Sgin in',()=>{
         cy.get('#menu-item-1142').click()
         cy.get('.sprout-auth-form').find('[type="text"]').type('mzhuang2019@gmail.com')
-        cy.get('.sprout-auth-form').find('[type="password"]').type('Mike_1983')
+        cy.get('.sprout-auth-form').find('[type="password"]').type('Mike')
         cy.get('.sprout-auth-bth').click()
+        cy.contains('password').should('be.exist')
+        cy.get('.sprout-auth-form').find('[type="password"]').type('Mike_1983')
         cy.get('.glyphicon-user').click()
         cy.contains('Log out').click() 
         cy.clearCookies()
