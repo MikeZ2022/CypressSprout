@@ -6,7 +6,7 @@
 "scripts":
  {"test":"test",
  "cypress:open":"cypress open",
- "cypress:run":"cypress run --spec 'cypress/e2e/SproutSmokeTest/*.cy.js' --record --key 1aa9c81b-0725-49e1-b7ed-0270cfb80990"
+ "cypress:run":"cypress run --headless --browser chrome --spec 'cypress/e2e/SproutSmokeTest/*.cy.js' --record --key 1aa9c81b-0725-49e1-b7ed-0270cfb80990"
  },
  "keywords":["e2e","cypress","automation","framework"],
  "author":"MikeZhuang",
