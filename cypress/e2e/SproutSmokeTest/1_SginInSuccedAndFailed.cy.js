@@ -13,7 +13,7 @@ describe('SproutSmokeTest',()=>{
         cy.get('#hs-eu-confirmation-button').click()
       })
     
-    it('1.1 User Sgin in',()=>{
+    it('1.1 User Sgin in faled with wrong password then succced with correct one',()=>{
         cy.get('#menu-item-1142').click()
         cy.get('.sprout-auth-form').find('[type="text"]').type('mzhuang2019@gmail.com')
         cy.get('.sprout-auth-form').find('[type="password"]').type('Mike')

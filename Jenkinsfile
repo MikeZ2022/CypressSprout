@@ -25,8 +25,7 @@ pipeline {
     //The values for these user-specified parameters are made available to Pipeline steps via the params object, see
     //the Parameters, Declarative Pipeline for its specific usage.
     parameters {
-        string(name: 'SPEC', defaultValue: 'cypress/e2e/SproutSmokeTest/*.cy.js', description: 'Ej: cypress/integration/pom/*.spec.js')
-        choice(name: 'BROWSER', choices: ['chrome', 'edge'], description: 'Pick the web browser you want to use to run your scripts')
+       
     }
     
     tools {
@@ -43,8 +42,7 @@ pipeline {
         
         stage('Testing') {
             steps {
-                sh "npm install cypress"
-                sh "npx cypress run --headless --browser --spec cypress/e2e/SproutSmokeTest/*.cy.js --record --key 773605ae-79d9-443c-b640-64acd29226ba"
+                
             }
         }
         
