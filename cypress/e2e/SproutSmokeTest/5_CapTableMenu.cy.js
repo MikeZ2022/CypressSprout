@@ -18,7 +18,7 @@ describe('SproutSmokeTest',()=>{
         cy.get('.sprout-auth-bth').click()
       })
     
-      it('1.5 Cap Table Menu Check',()=>{
+      it('1.5 Cap Table Menu items Check',()=>{
         cy.contains('Cap Table').click()
         cy.contains('By share class').click()
         cy.contains('View cap table as of').should('be.exist')

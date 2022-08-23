@@ -13,7 +13,7 @@ describe('SproutSmokeTest',()=>{
         cy.get('#hs-eu-confirmation-button').click()
       })
     
-    it('1.3 User open all headers',()=>{
+    it('1.3 User open all header items on Homepage',()=>{
         cy.get('#menu-item-105').trigger('mouseover')
         cy.contains('Sprout')
         cy.contains('Folium')

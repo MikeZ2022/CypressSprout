@@ -12,7 +12,7 @@ describe('SproutSmokeTest',()=>{
         cy.get('#hs-eu-confirmation-button').click()
       })
     
-    it('2 Try to Sign Up and request a demo',()=>{
+    it('1.2 Try to Sign Up and request a demo',()=>{
         cy.get('#menu-item-536').click()
         cy.contains('Already have an account, create another company?').should('be.exist')
         cy.get('#name').type('TestFromMike')

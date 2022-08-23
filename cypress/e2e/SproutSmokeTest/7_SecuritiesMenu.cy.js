@@ -1,5 +1,5 @@
 
-      ///<reference types="cypress"/>
+    /// <reference types="cypress"/>
 
       describe('SproutSmokeTest',()=>{
         beforeEach(() => {
@@ -17,25 +17,21 @@
             cy.get('.sprout-auth-bth').click()
           })
     
-        it('7_User Browse Fundraising Menu',()=>{
+        it('1.7 Securities Menu items check',()=>{
         cy.contains('Securities').click()
-        cy.contains('Shares').should('be.visible')
-        cy.contains('Share Option Awards')
-        cy.contains('Warrants')
-        cy.contains('Share Option Awards')
-        cy.contains('Warrants')
-        cy.contains('Convertibles')
-        cy.contains('Templates')
-        cy.wait(2000)
-        cy.contains('Stakeholders').click()
-        cy.contains('All stakeholders')
-        cy.contains('Transactions')
-        cy.contains('Stakeholder access')
-        cy.wait(2000)
-        cy.contains('Reports').click()
-        cy.contains('Equity Reports')
-        cy.wait(1000)
-        cy.contains('Board').click()
+        cy.contains('Shares').click()
+        cy.contains('Manage share classes').should('be.exist')
+        cy.contains('Manage vesting').should('be.exist')
+        cy.contains('Draft shares').should('be.exist')
+        cy.contains('Share Option Awards').click()
+        cy.contains('Manage equity plans').should('be.exist')
+        cy.contains('Warrants').click()
+        cy.contains('Manage warrant blocks').should('be.exist')
+        cy.contains('Convertibles').click()
+        cy.contains('Manage convertible terms').should('be.exist')
+        cy.contains('Securities settings').click()
+        cy.get('.glyphicon-user').click()
+        cy.contains('Log out').click() 
         cy.clearCookies()
         cy.getCookies().should('be.empty')
 })

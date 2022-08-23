@@ -5,7 +5,10 @@
 # build it with command
 #   docker build -t cypress/base:16.2.0 .
 #
-FROM node:16.2.0-buster
+FROM cypress/base:16.2.0
+RUN npm install --save-dev cypress
+RUN $(npm bin)/cypress verify
+RUN $(npm bin)/cypress run
 
 RUN apt-get update && \
   apt-get install --no-install-recommends -y \
