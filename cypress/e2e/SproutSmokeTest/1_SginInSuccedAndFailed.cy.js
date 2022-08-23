@@ -24,7 +24,7 @@ describe('SproutSmokeTest',()=>{
         cy.get('.sprout-auth-form').find('[type="password"]').type('Mike_1983')
         cy.get('.sprout-auth-bth').click()
         cy.get('.glyphicon-user').click()
-       cy.contains('Log out').click() npx 
+       cy.contains('Log out').click()
        cy.clearCookies()
        cy.getCookies().should('be.empty')
       })
