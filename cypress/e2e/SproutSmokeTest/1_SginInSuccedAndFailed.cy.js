@@ -10,6 +10,7 @@ describe('SproutSmokeTest',()=>{
         cy.viewport('macbook-13')
         cy.wait(500)
         cy.visit('https://www.getsprout.co')
+        cy.wait(6000)
         cy.get('#hs-eu-confirmation-button').click()
       })
     
