@@ -10,26 +10,20 @@ describe('SproutSmokeTest',()=>{
         cy.wait(500)
         cy.visit('https://www.getsprout.co')
         cy.get('#hs-eu-confirmation-button').click()
-        cy.get('#menu-item-1142').click()
-        cy.get('.sprout-auth-form').find('[type="text"]').type('mzhuang2019@gmail.com')
-        cy.get('.sprout-auth-form').find('[type="password"]').type('Mike_1983')
-        cy.get('.sprout-auth-bth').click()
+        cy.login('mzhuang2019@gmail.com','Mike_1983')
       })
-    
-    it('1.4 Company summary Menu items check',()=>{
-       
+    it('1.4 Company summary Menu items check',()=>{   
         cy.get('li .ant-menu-submenu-title')
         cy.wait(5000)
         cy.contains('Summary').click()   
         cy.contains('Permissions and roles').click()
-        cy.contains('Account users').should('exist')
-        cy.contains('Data room')
-        cy.contains('Settings') 
+        cy.contains('Account users').should('be.exist')
+        cy.contains('Data room').should('be.visible')
+        cy.contains('Settings') .should('be.visible')
         cy.wait(2000)
         cy.get('.glyphicon-user').click()
         cy.contains('Log out').click() 
         cy.clearCookies()
         cy.getCookies().should('be.empty')
-       
       })
 })

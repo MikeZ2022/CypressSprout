@@ -12,10 +12,7 @@ describe('SproutSmokeTest',()=>{
         cy.wait(500)
         cy.visit('https://www.getsprout.co')
         cy.get('#hs-eu-confirmation-button').click()
-        cy.get('#menu-item-1142').click()
-        cy.get('.sprout-auth-form').find('[type="text"]').type('mzhuang2019@gmail.com')
-        cy.get('.sprout-auth-form').find('[type="password"]').type('Mike_1983')
-        cy.get('.sprout-auth-bth').click()
+        cy.login('mzhuang2019@gmail.com','Mike_1983')
       })
     
       it('1.5 Cap Table Menu items Check',()=>{
@@ -26,7 +23,6 @@ describe('SproutSmokeTest',()=>{
         cy.get('.ant-collapse-item').eq('0').click()
         cy.get('.sprout-menu-logo-wrap').eq('0').click()
         cy.get('.table-total-td-first').should('be.exist')
-        cy.contains('Convertibles')
         cy.contains('By stakeholder').click()
         cy.get('.stake-holder-content-first').should('be.exist')
         cy.contains('By voting power').click()

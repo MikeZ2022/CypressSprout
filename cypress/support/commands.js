@@ -7,7 +7,19 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
+Cypress.Commands.add('forceVisit', url => {
+    cy.window().then(win => {
+        return win.open(url, '_self');
+      });
+    });
+  
+Cypress.Commands.add('login', (username, password) => {    
+        cy.get('#menu-item-1142').click()
+        cy.get('.sprout-auth-form').find('[type="text"]').type(username)
+        cy.get('.sprout-auth-form').find('[type="password"]').type(password)
+        cy.get('.sprout-auth-bth').click()
+        cy.url().should('contain', '/home/summary')
+    })
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
