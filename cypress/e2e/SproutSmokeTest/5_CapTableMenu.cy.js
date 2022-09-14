@@ -9,7 +9,6 @@ describe('SproutSmokeTest',()=>{
         // Since we want to visit the same URL at the start of all our tests,
         // we include it in our beforeEach function so that it runs before each test
         cy.viewport('macbook-13')
-        cy.wait(500)
         cy.visit('https://www.getsprout.co')
         cy.get('#hs-eu-confirmation-button').click()
         cy.login('mzhuang2019@gmail.com','Mike_1983')
