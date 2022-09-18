@@ -18,7 +18,13 @@ Cypress.Commands.add('login', (username, password) => {
         cy.get('.sprout-auth-form').find('[type="text"]').type(username)
         cy.get('.sprout-auth-form').find('[type="password"]').type(password)
         cy.get('.sprout-auth-bth').click()
-    })
+    });
+    Cypress.Commands.add('loginOnQA', (username, password) => {  
+        cy.visit('https://app-qa.getsprout.co/')
+        cy.get('.sprout-auth-form').find('[type="text"]').type(username)
+        cy.get('.sprout-auth-form').find('[type="password"]').type(password)
+        cy.get('.sprout-auth-bth').click()
+    });    
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
