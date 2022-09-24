@@ -19,7 +19,6 @@ describe('SproutSmokeTest',()=>{
         cy.contains('Securities').should('be.visible')
         cy.contains('Data room').click()
         cy.contains('Please get in touch with the company admin to grant access.')
-        cy.wait(2000)
         cy.get('.glyphicon-user').click()
         cy.contains('Log out').click() 
         cy.clearCookies()
