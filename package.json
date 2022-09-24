@@ -5,6 +5,12 @@
  "scripts":{"test":"test",
             "cypress:open":"cypress open",
             "cypressProd:run":"cypress run --headless --browser chrome --spec 'cypress/e2e/SproutSmokeTest/Prod/*.cy.js' --record --key 1aa9c81b-0725-49e1-b7ed-0270cfb80990"},
+<<<<<<< HEAD
+=======
+ "keywords":["e2e","cypress","automation","framework"],
+ "author":"MikeZhuang",
+ "license":"ISC",
+>>>>>>> b1f365fc705db3bacd386e528f130c7a16d0c3cc
  "devDependencies":{
    "cypress":"^10.8.0",
    "cypress-grep":"^3.0.2",
@@ -16,6 +22,10 @@
    "cypress-multi-reporters":"^1.6.1",
    "mochawesome":"^7.1.3",
    "mochawesome-merge":"^4.2.1",
+<<<<<<< HEAD
    "mochawesome-report-generator":"^6.2.0"},
    "author":"MikeZhuang",
    "license":"ISC"}
+=======
+   "mochawesome-report-generator":"^6.2.0"}}
+>>>>>>> b1f365fc705db3bacd386e528f130c7a16d0c3cc
