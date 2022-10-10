@@ -18,7 +18,7 @@ describe('SproutSmokeTest',()=>{
         cy.contains('Summary of Tokens').should('be.visible')
         cy.contains('Stakeholders').click()
         cy.contains('All wallets').click()
-        cy.get('.crypto-detail-banner > .ant-btn').click()
+        cy.get('.ant-space > :nth-child(2) > .ant-btn').click()
         cy.contains('Curve DAO Token').click()
         cy.get('[data-row-key="146262"] > :nth-child(3) > div > a').click()
         cy.get('.is-invalid > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector')
