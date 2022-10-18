@@ -19,7 +19,7 @@ describe('SproutSmokeTest',()=>{
         
         cy.contains('Transactions').click()
         cy.get('.sprout-flex > .ant-dropdown-trigger').click()
-        cy.contains('Curve DAO Token').click()
+        cy.contains('Curve DAO').click()
         cy.contains('Update Tags').eq('0').click()
         cy.get('.coin-transaction-updatetags-content > .ant-select > .ant-select-selector').type('MikeTest')
         cy.get('.coin-transaction-updatetags-label').click()

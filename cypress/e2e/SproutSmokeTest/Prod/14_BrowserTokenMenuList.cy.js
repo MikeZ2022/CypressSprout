@@ -22,7 +22,7 @@ describe('SproutSmokeTest',()=>{
         cy.contains('Wallet').should('be.visible')
         cy.contains('Ownership').click()
         cy.get('.captable-token--banner > .ant-btn').click()
-        cy.contains('Curve DAO Token').click()
+        cy.contains('Curve DAO').click()
         cy.contains('Investor').click()
         cy.contains('mike').click()
         cy.contains('Grants').click()

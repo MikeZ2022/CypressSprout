@@ -20,7 +20,7 @@ describe('SproutSmokeTest',()=>{
         cy.contains('All wallets').click()
         cy.get('.ant-space > :nth-child(2) > .ant-btn')
           .click()
-        cy.contains('Curve DAO Token')
+        cy.contains('Curve DAO')
           .click()
         cy.get('[data-row-key="146262"] > :nth-child(3) > div > a')
           .click()
