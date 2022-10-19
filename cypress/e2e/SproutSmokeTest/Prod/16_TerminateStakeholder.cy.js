@@ -16,7 +16,7 @@ describe('SproutSmokeTest',()=>{
     cy.contains('Securities').click()
     cy.contains('Share Option Awards').click()
     cy.get('[data-row-key="8941"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
-    cy.get(':nth-child(9) > a').click()
+    cy.get(':nth-child(6) > a').click()
     cy.get(':nth-child(1) > div.col-xs-4 > .ant-picker > .ant-picker-input > input').click()
     cy.contains('Today').click()
     cy.get('#termination_type_01 > .form-control').select('With cause')
