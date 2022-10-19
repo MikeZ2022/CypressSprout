@@ -12,7 +12,7 @@
         cy.login('mzhuang2019@gmail.com','Mike_1983')
       })
 
-    it('1.18 Securities Menu items check',()=>{
+    it('1.14 Modify a Certificate',()=>{
     cy.contains('Securities').click()
     cy.contains('Shares').click()
     cy.get('[data-row-key="8548"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
