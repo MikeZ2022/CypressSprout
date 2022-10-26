@@ -12,7 +12,7 @@ describe('SproutSmokeTest',()=>{
         cy.login('mzhuang2019@gmail.com','Mike_1983')
       })
 
-    it('1.17 Exercise a option grant',()=>{
+    it('1.21 Exercise a option grant',()=>{
     cy.contains('Securities').click()
     cy.contains('Share Option Awards').click()
     cy.get('[data-row-key="8941"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
@@ -22,9 +22,10 @@ describe('SproutSmokeTest',()=>{
     cy.get('#exercise_step1 > .modal-body > .body-one > .form-horizontal > :nth-child(2) > .col-xs-5 > .form-control').type('1')
     cy.get('#exercise_select').selectFile('cypress/fixtures/TestFromMike.txt')
     cy.wait(2000)
-    cy.contains('Review Details').click()
-    cy.get('#exercise_step2 > .modal-header > .back-btn').click()
-    cy.contains('Review Details').click()
+    cy.get('#exercise_step1 > .modal-footer > .btn').click()
+    cy.get('.body-one > .table > tbody > :nth-child(13) > :nth-child(1)')
+      .wait(1000)
+      .trigger('mousedown,bottom')
     cy.get('#exercise_step2 > .modal-footer > .btn').click()
     cy.contains('Partially exercised').should('be.exist')
     cy.get('.sprout-header-task').click()
