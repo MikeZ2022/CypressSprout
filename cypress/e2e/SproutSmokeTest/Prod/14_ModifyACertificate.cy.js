@@ -29,6 +29,7 @@
     cy.contains('1').should('be.exist')
     cy.contains('Cap Table').click()
     cy.contains('By share class').click()
+    cy.visit('home/captable/byshareclass')
     cy.contains('CSA').click()
     cy.contains('Anna Sun').click()
     cy.contains('CSA-1').click()
