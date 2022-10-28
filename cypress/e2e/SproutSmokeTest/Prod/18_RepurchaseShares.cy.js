@@ -32,6 +32,7 @@
   cy.get('[data-row-key="8549"] > .ant-table-selection-column > .ant-checkbox-wrapper > .ant-checkbox').click()
   cy.contains('Actions').click()
   cy.get('.ant-dropdown-menu > :nth-child(2) > a').click()
+  cy.wait(2000)
   cy.get('#first_name > .ant-picker > .ant-picker-input').click()
   cy.wait(2000)
   cy.contains('Today').click()
