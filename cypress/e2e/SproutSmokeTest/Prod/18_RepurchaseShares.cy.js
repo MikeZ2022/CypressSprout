@@ -39,7 +39,7 @@
   cy.get('#cancel_step1 > .modal-body > .body-one > .form-horizontal > :nth-child(2) > div.col-xs-5 > .form-control').select('Buyback')
   cy.get('#cancel_step1 > .modal-footer > .btn').click()
   cy.get('#cancel_step2 > .modal-footer > .btn').click()
-  cy.visit('https://app.getsprout.co/home/securities/shares')
+  cy.visit('/home/securities/shares')
   cy.get('[data-row-key="8549"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
   cy.get('.ant-dropdown-menu > :nth-child(3) > a').click()
   cy.visit('/home/summary')
