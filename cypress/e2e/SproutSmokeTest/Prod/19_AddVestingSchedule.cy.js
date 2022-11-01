@@ -30,6 +30,7 @@
     cy.get('.ant-dropdown-menu > :nth-child(2) > a').click()
     cy.get(':nth-child(2) > .form-group > .acceleration_terms_a').click()
     cy.get('#removeVestingSchedule > .modal-footer > :nth-child(2)').click()
+    cy.wait(2000)
     cy.contains('sdsd').should('not.be.exist')
     cy.visit('/home/summary')
     cy.get('.glyphicon-user').click()
