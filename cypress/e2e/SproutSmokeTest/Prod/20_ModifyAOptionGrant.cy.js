@@ -45,7 +45,7 @@ describe('SproutSmokeTest',()=>{
     cy.get('#modifyOptionValue > .modal-footer > .btn').click()
     cy.get('#reviewOptionModifications > .modal-footer > .btn').click()
     cy.wait(1000)
-    cy.contains('1234').should('be.exist')
+    cy.contains('1,234').should('be.visible')
     cy.visit('/home/summary')
     cy.get('.glyphicon-user').click()
     cy.contains('Log out').click() 

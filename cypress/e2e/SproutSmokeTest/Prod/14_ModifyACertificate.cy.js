@@ -30,6 +30,7 @@
     cy.visit('home/captable/byshareclass')
     cy.wait(2000)
     cy.contains('CSA').click()
+    cy.wait(2000)
     cy.contains('Anna Sun').click()
     cy.contains('CSA-1').click()
     cy.contains('1').should('be.exist')
