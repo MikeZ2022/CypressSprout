@@ -25,7 +25,7 @@
     cy.get('#schedule_step2 > .modal-footer > .btn').click()
     cy.get('#schedule_step3 > .modal-footer > .btn').click()
     cy.contains('sdsd').should('be.exist')
-    cy.visit('https://app.getsprout.co/home/securities/shares')
+    cy.visit('/home/securities/shares')
     cy.get('[data-row-key="8551"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.get('.ant-dropdown-menu > :nth-child(2) > a').click()
     cy.get(':nth-child(2) > .form-group > .acceleration_terms_a').click()

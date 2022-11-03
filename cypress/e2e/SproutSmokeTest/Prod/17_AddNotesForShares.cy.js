@@ -24,7 +24,7 @@
     .wait(2000)
   cy.contains('Save admin notes').click()
   cy.wait(1100)
-  cy.visit('https://app.getsprout.co/home/captable/byshareclass')
+  cy.visit('/home/captable/byshareclass')
   cy.contains('CSB').click()
   cy.contains('Feng Xu').click()
   cy.contains('CSB-2').click()
