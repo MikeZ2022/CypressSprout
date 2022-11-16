@@ -15,7 +15,7 @@ describe('SproutSmokeTest',()=>{
         cy.visit('/home/token/dashboard')
         cy.contains('Summary of Tokens').should('be.visible')
       })
-    it('1.16 Token Transactions Check',()=>{   
+    it('2.3 Token Transactions Check',()=>{   
         
         cy.contains('Transactions').click()
         cy.get('.sprout-flex > .ant-dropdown-trigger').click()

@@ -13,7 +13,7 @@ describe('SproutSmokeTest',()=>{
         cy.login('mzhuang2019@gmail.com','Mike_1983')
         cy.wait(5000)
       })
-    it('1.17 Go Through Token Wallet Details',()=>{   
+    it('2.4 Go Through Token Wallet Details',()=>{   
         cy.visit('/home/token/dashboard')
         cy.contains('Summary of Tokens').should('be.visible')
         cy.contains('Stakeholders').click()

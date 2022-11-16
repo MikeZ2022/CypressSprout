@@ -1,6 +1,5 @@
 ///<reference types="cypress"/>
 
-
 describe('SproutSmokeTest',()=>{
     beforeEach(() => {
         // Cypress starts out with a blank slate for each test
@@ -13,25 +12,16 @@ describe('SproutSmokeTest',()=>{
         cy.login('mzhuang2019@gmail.com','Mike_1983')
         cy.wait(5000)
       })
-    it('1.14 Go Through Token Submenu List',()=>{   
+    it('2.2 Exist Token Details check',()=>{   
         cy.visit('/home/token/dashboard')
-        cy.contains('Summary of Tokens').should('be.visible')
+        cy.url().should('contains','token/dashboard')
+        cy.contains('Select Token').trigger('mouseover')
         cy.visit('/home/token/detail')
+        cy.contains('Overview').should('be.visible')
         cy.contains('Profile Summary').should('be.visible')
-        cy.contains('All wallets').click()
-        cy.contains('Wallet').should('be.visible')
-        cy.contains('Ownership').click()
-        cy.get('.captable-token--banner > .ant-btn').click()
-        cy.contains('Curve DAO').click()
-        cy.contains('Investor').click()
-        cy.contains('mike').click()
-        cy.contains('Grants').click()
-        cy.contains('Grant Name').should('be.exist')
-        cy.contains('Assign token grants').should('be.exist')
-        cy.contains('Warrants').click()
-        cy.contains('Security').should('be.exist')
-        cy.contains('Transactions').click()
-        cy.contains('Curve DAO Token').should('be.exist')
+        cy.contains('Transactions').should('be.visible')
+        cy.contains('Back to summary').click()
+        cy.url().should('contains','token/dashboard')
         cy.get('.glyphicon-user').click()
         cy.contains('Log out').click() 
         cy.clearCookies()
