@@ -17,7 +17,7 @@ describe('SproutSmokeTest',()=>{
         cy.contains('Account users').should('not.exist')
         cy.wait(2000)
         cy.contains('Data room').click()
-        cy.contains('document(s)').should('be.visible')
+        cy.contains('PGA-111').should('be.visible')
         cy.contains('Cap Table').should('be.visible')
         cy.contains('Securities').should('be.visible')
         cy.get('.glyphicon-user').click()
