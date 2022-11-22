@@ -41,7 +41,6 @@ describe('SproutSmokeTest',()=>{
         cy.contains('Today').click()
         cy.contains('Save').click()
         cy.get('.new-financing-round-save-name > .ant-btn').click()
-        cy.contains('By share class').click()
         cy.contains('Current Cap table').should('be.exist')
         cy.contains('Wire Instructions').click()
         cy.get('textarea').clear().type('TestFromMike')
