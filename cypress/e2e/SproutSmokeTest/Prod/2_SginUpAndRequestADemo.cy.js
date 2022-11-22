@@ -47,7 +47,7 @@ describe('SproutSmokeTest',()=>{
         cy.contains('This field must be number')
           .should('be.exist')
         cy.wait(500)
-        cy.get('#request_demo').click()
+
         cy.clearCookies()
         cy.getCookies().should('be.empty')
       })
