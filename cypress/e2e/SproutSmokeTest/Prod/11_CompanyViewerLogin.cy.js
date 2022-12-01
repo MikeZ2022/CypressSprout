@@ -27,7 +27,7 @@ describe('SproutSmokeTest',()=>{
         cy.contains('No Data').should('be.visible')
         cy.contains('Access logs').click()
         cy.contains('MikezTest003').should('exist')
-        cy.contains('Entered folder [Board]').should('exist')
+        cy.contains('Entered Board').should('exist')
         cy.get('.close').click()
         cy.get('.glyphicon-user').click()
         cy.contains('Log out').click() 
