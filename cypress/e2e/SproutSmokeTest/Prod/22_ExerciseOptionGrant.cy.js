@@ -30,7 +30,7 @@ describe('SproutSmokeTest',()=>{
     cy.contains('Partially exercised').should('be.exist')
     cy.reload()
     cy.get('.sprout-task-tip-btns > .ant-btn').click()
-    cy.get('.sprout-header-task').click()
+    cy.get('.ant-dropdown-trigger.sprout-header-task').click()
     cy.contains('Sign certificate').click()
     cy.get('.ant-table-selection-column > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input').click()
     cy.get('.task-sign-btns > .ant-btn').click()
