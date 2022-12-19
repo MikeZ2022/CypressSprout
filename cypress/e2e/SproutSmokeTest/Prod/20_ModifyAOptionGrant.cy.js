@@ -14,7 +14,7 @@ describe('SproutSmokeTest',()=>{
 
     it('1.20 Modify a Option grant',()=>{
     cy.contains('Securities').click()
-    cy.contains('Share Option Awards').click()
+    cy.contains('Share option awards').click()
     cy.get('[data-row-key="8554"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.get('.ant-dropdown-menu > :nth-child(1) > a').click()
     cy.get(':nth-child(1) > .row > .col-xs-4 > .form-control').select('Clerical error')
