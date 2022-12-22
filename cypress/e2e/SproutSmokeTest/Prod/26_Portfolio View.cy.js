@@ -12,7 +12,7 @@ describe('SproutSmokeTest',()=>{
         cy.login('mzhuang2019@gmail.com','Mike_1983')
       })
 
-    it('1.25 Portfolio view',()=>{
+    it('1.26 Portfolio view',()=>{
     cy.contains('Test company Mike').click()
     cy.contains('See More Portfolios').click()
     cy.get('.filter-item > .word-item').click()
