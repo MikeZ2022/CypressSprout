@@ -13,16 +13,22 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.26 Portfolio view',()=>{
+    cy.contains('Securities').click()
+    cy.contains('Share option awards').click()
+    cy.get('.ant-input').type('miketest{enter}')
+    cy.contains('Canceled')
     cy.contains('Test company Mike').click()
     cy.contains('See More Portfolios').click()
     cy.get('.filter-item > .word-item').click()
     cy.get('.portfolio-btns > :nth-child(2)').click()
+    cy.contains('Canceled')
     cy.contains('EA1-651').click()
     cy.contains('mikeTest').should('exist')
     cy.contains('mzhuang2019@gmail.com').should('exist')
     cy.go('back')
     cy.get('.filter-item > .word-item').click()
     cy.get('.portfolio-btns > :nth-child(3)').click()
+    
     cy.contains('CSA').click()
     cy.contains('Feng Xu').click()
     cy.contains('CSA-2').click()
