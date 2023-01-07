@@ -44,6 +44,7 @@
     cy.get(':nth-child(2) > .table > tbody > :nth-child(4) > :nth-child(3) > .form-control').type('123456')
     cy.get('#modifyValue > .modal-footer > .btn').click()
     cy.get('#reviewModifications > .modal-footer > .btn').click()
+    cy.wait(5000)
     cy.contains('123456').should('be.exist')
     cy.visit('/home/summary')
     cy.get('.glyphicon-user').click()
