@@ -45,7 +45,7 @@
     cy.get('#modifyValue > .modal-footer > .btn').click()
     cy.get('#reviewModifications > .modal-footer > .btn').click()
     cy.wait(5000)
-    cy.contains('123456').should('be.exist')
+    cy.contains('123,456')
     cy.visit('/home/summary')
     cy.get('.glyphicon-user').click()
     cy.contains('Log out').click() 
