@@ -53,6 +53,7 @@ describe('SproutSmokeTest',()=>{
     cy.get('.ant-checkbox-group > :nth-child(11) > :nth-child(2)').click()
     cy.get('.ant-space > :nth-child(2) > .ant-btn').click()
     cy.get('.ant-input').type('Anna sun{enter}')
+    cy.wait(5000)
     cy.get('.ant-table-cell-fix-right > .ant-dropdown-trigger').eq(0).click()
     cy.get('.ant-dropdown-menu > :nth-child(3) > a').click()
     cy.get('#exercise_step1 > .modal-body > .body-one > .form-horizontal > :nth-child(1) > .col-xs-5 > .ant-picker > .ant-picker-input > input').click()
