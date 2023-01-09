@@ -15,6 +15,7 @@ describe('SproutSmokeTest',()=>{
     it('1.29 OPtions Covert to ipo',()=>{
     cy.contains('Securities').click()
     cy.contains('Share option awards').click()
+    cy.wait(1000)
     cy.get('.draft-statistic-badge > .btn').click()
     cy.wait(1000)
     cy.get(':nth-child(2) > .btn').click()
