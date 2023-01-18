@@ -23,6 +23,7 @@ describe('SproutSmokeTest',()=>{
         cy.get('.sprout-menu-logo-wrap').eq('0').click()
         cy.get('.table-total-td-first').should('be.exist')
         cy.contains('By stakeholder').click()
+        cy.wait(20000)
         cy.get('.stake-holder-content-first').should('be.exist')
         cy.contains('By voting power').click()
         cy.contains('Rounds').should('be.exist')

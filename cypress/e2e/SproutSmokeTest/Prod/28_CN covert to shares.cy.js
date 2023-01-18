@@ -51,7 +51,7 @@ describe('SproutSmokeTest',()=>{
     cy.wait(5000)
     cy.contains('Test company Mike').click()
     cy.contains('See More Companies').click()
-    cy.get('.filter-item > .word-item').click()
+    cy.get(':nth-child(2) > .filter-item > .word-item').click()
     cy.visit('home/securities/convertibles')
     cy.get('[data-row-key="8568"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.contains('Reverse cancellation').click()

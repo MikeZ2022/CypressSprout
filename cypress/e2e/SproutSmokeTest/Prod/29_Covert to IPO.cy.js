@@ -47,7 +47,7 @@ describe('SproutSmokeTest',()=>{
     cy.wait(5000)
     cy.contains('Test company Mike').click()
     cy.contains('See More Companies').click()
-    cy.get('.filter-item > .word-item').click()
+    cy.get(':nth-child(2) > .filter-item > .word-item').click()
     cy.visit('home/securities/stock-option-awards')
     cy.get('.ant-badge > .ant-btn').click()
     cy.get('.ant-checkbox-group > :nth-child(11) > :nth-child(2)').click()

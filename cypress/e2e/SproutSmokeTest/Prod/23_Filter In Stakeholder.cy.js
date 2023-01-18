@@ -15,6 +15,7 @@ describe('SproutSmokeTest',()=>{
     it('1.23 Filter function in Stakeholders',()=>{
     cy.contains('Stakeholders').click()
     cy.contains('All stakeholders').click()
+    cy.wait(20000)
     cy.get('.ant-badge > .ant-btn').click()
     cy.get(':nth-child(1) > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector')
       .click()
@@ -36,6 +37,7 @@ describe('SproutSmokeTest',()=>{
       .type('None{enter}')
     cy.get(':nth-child(4) > .ant-form-item-label > label').click()
     cy.get('.ant-space > :nth-child(2) > .ant-btn').click()
+    cy.wait(20000)
     cy.contains('mike.test007').should('not.exist')
     cy.contains('Anna Sun').should('exist')
     cy.contains('4').should('be.exist')
@@ -48,6 +50,7 @@ describe('SproutSmokeTest',()=>{
     cy.get('.ant-checkbox-group > :nth-child(7) > :nth-child(2)')
       .click()
     cy.get('.ant-space > :nth-child(2) > .ant-btn').click()
+    cy.wait(20000)
     cy.contains('6').should('exist')
     cy.contains('No Data').should('exist')
     cy.wait(2200)
