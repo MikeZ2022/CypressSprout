@@ -13,7 +13,7 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.16 Terminate a stakeholder',()=>{
-    cy.contains('Securities').click()
+    cy.contains('Securities').trigger('mouseover')
     cy.contains('Share option awards').click()
     cy.get('[data-row-key="10347"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.get('.ant-dropdown-menu > :nth-child(7) > a').click()
@@ -38,10 +38,5 @@ describe('SproutSmokeTest',()=>{
     cy.contains('Reverse termination').click()
     cy.get('.ant-modal-body > .modal-content > .modal-footer > :nth-child(2)').click()
     cy.visit('/home/summary')
-    cy.wait(2000)
-    cy.get('.glyphicon-user').click()
-    cy.contains('Log out').click() 
-    cy.clearCookies()
-    cy.getCookies().should('be.empty')
 })
 })

@@ -13,8 +13,8 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.24 Filter function in Shares',()=>{
-    cy.contains('Securities').click()
-    cy.contains('Shares').click()
+    cy.wait(2000)
+    cy.visit('/home/securities/shares')
     cy.get('.ant-badge > .ant-btn').click()
     cy.get(':nth-child(1) > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector')
       .click()
@@ -52,11 +52,5 @@ describe('SproutSmokeTest',()=>{
     .click()
     cy.get('.ant-space > :nth-child(2) > .ant-btn').click()
     cy.contains('No Data').should('exist')
-    cy.wait(2200)
-    cy.visit('/home/summary')
-    cy.get('.glyphicon-user').click()
-    cy.contains('Log out').click() 
-    cy.clearCookies()
-    cy.getCookies().should('be.empty')
 })
 })

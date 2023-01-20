@@ -12,6 +12,7 @@ describe('SproutSmokeTest',()=>{
         cy.login('mikez.test002@gmail.com','Mike_1983')
       })
     it('1.10 Company Editor login and permissions check',()=>{   
+        cy.get('.ant-menu-submenu-selected > .ant-menu-submenu-title').trigger('mouseover')
         cy.contains('Summary').should('be.visible')  
         cy.contains('Permissions and roles').should('be.visible')
         cy.contains('Settings').should('be.visible')
@@ -35,7 +36,7 @@ describe('SproutSmokeTest',()=>{
         cy.contains('Access logs').should('be.visible')
         cy.wait(2000)
         cy.contains('Documents').should('be.visible')
-        cy.get('.glyphicon-user').click()
+        cy.get('.sprout-header-task-wrap > .ant-dropdown-trigger').click()
         cy.contains('Log out').click() 
         cy.clearCookies()
         cy.getCookies().should('be.empty')

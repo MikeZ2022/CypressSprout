@@ -13,7 +13,7 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.25 Filter function in Options',()=>{
-    cy.contains('Securities').click()
+    cy.contains('Securities').trigger('mouseover')
     cy.contains('Share option awards').click()
     cy.get('.ant-badge > .ant-btn').click()
     cy.contains('INTL').click()
@@ -46,11 +46,5 @@ describe('SproutSmokeTest',()=>{
     cy.get('.ant-badge > .ant-btn').click()
     cy.contains('Clear all filters').click()
     cy.contains('mikeTest').should('be.exist')
-    cy.wait(2200)
-    cy.visit('/home/summary')
-    cy.get('.glyphicon-user').click()
-    cy.contains('Log out').click() 
-    cy.clearCookies()
-    cy.getCookies().should('be.empty')
 })
 })

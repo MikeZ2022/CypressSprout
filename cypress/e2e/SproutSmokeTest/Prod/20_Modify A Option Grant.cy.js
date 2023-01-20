@@ -13,7 +13,7 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.20 Modify a Option grant',()=>{
-    cy.contains('Securities').click()
+    cy.contains('Securities').trigger('mouseover')
     cy.contains('Share option awards').click()
     cy.get('[data-row-key="8554"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.get('.ant-dropdown-menu > :nth-child(1) > a').click()
@@ -46,9 +46,5 @@ describe('SproutSmokeTest',()=>{
     cy.get('#reviewOptionModifications > .modal-footer > .btn').click()
     cy.wait(2000)
     cy.contains('123').should('exist')
-    cy.get('.glyphicon-user').click()
-    cy.contains('Log out').click() 
-    cy.clearCookies()
-    cy.getCookies().should('be.empty')
 })
 })

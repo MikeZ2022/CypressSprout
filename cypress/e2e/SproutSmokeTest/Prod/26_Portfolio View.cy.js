@@ -13,7 +13,7 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.26 Portfolio view',()=>{
-    cy.contains('Securities').click()
+    cy.contains('Securities').trigger('mouseover')
     cy.contains('Share option awards').click()
     cy.get('.ant-input').type('miketest{enter}')
     cy.contains('Canceled')
@@ -36,7 +36,7 @@ describe('SproutSmokeTest',()=>{
     cy.go('back')
     cy.wait(2200)
     cy.visit('/home/summary')
-    cy.get('.glyphicon-user').click()
+    cy.get('.sprout-header-task-wrap > .ant-dropdown-trigger').click()
     cy.contains('Log out').click() 
     cy.clearCookies()
     cy.getCookies().should('be.empty')

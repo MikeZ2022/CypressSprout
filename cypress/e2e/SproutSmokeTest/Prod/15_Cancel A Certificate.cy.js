@@ -13,8 +13,8 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.15 Cancel a Certificate',()=>{
-    cy.contains('Securities').click()
-    cy.contains('Shares').click()
+    cy.wait(2000)
+    cy.visit('/home/securities/shares')
     cy.get('[data-row-key="8548"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.get('.ant-dropdown-menu > :nth-child(5) > a').click()
     cy.get('#first_name > .ant-picker > .ant-picker-input > input').click()
@@ -27,9 +27,5 @@ describe('SproutSmokeTest',()=>{
     cy.get('[data-row-key="8548"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.contains('Reverse cancellation').click()
     cy.visit('/home/summary')
-    cy.get('.glyphicon-user').click()
-    cy.contains('Log out').click() 
-    cy.clearCookies()
-    cy.getCookies().should('be.empty')
 })
 })

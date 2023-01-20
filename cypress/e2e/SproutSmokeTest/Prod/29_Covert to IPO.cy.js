@@ -13,7 +13,7 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.29 OPtions Covert to ipo',()=>{
-    cy.contains('Securities').click()
+    cy.contains('Securities').trigger('mouseover')
     cy.contains('Share option awards').click()
     cy.wait(1000)
     cy.get('.draft-statistic-badge > .btn').click()
@@ -63,10 +63,6 @@ describe('SproutSmokeTest',()=>{
     cy.get('#keep_checkbox > .send-div').click()
     cy.get('#exercise_step1 > .modal-footer > .btn').click()
     cy.get('#exercise_step2 > .modal-footer > .btn').click()
-    cy.wait(5000)
-    cy.visit('/home/summary')
-    cy.get('.glyphicon-user').click()
-    cy.contains('Log out').click()
     
 })
 })

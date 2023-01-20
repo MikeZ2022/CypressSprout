@@ -12,6 +12,7 @@ describe('SproutSmokeTest',()=>{
         cy.login('mikez.test005@gmail.com','Mike_1983')
       })
     it('1.13 Share Class Admin login and permissions check',()=>{   
+        cy.get('.ant-menu-submenu-selected > .ant-menu-submenu-title').trigger('mouseover')
         cy.contains('Summary').should('be.visible')  
         cy.contains('Permissions and roles').should('not.exist')
         cy.contains('Account users').should('not.exist')
@@ -19,7 +20,7 @@ describe('SproutSmokeTest',()=>{
         cy.contains('Securities').should('be.visible')
         cy.contains('Data room').click()
         cy.contains('Please get in touch with the company admin to grant access.')
-        cy.get('.glyphicon-user').click()
+        cy.get('.sprout-header-task-wrap > .ant-dropdown-trigger').click()
         cy.contains('Log out').click() 
         cy.clearCookies()
         cy.getCookies().should('be.empty')

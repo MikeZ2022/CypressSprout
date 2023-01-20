@@ -13,8 +13,7 @@
       })
 
     it('1.14 Modify a Certificate',()=>{
-    cy.contains('Securities').click()
-    cy.contains('Shares').click()
+    cy.visit('/home/securities/shares')
     cy.get('[data-row-key="8548"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.contains('Modify certificate').click()
     cy.get(':nth-child(1) > .row > .col-xs-4 > .form-control').select('Clerical error')
@@ -47,7 +46,7 @@
     cy.wait(5000)
     cy.contains('123,456')
     cy.visit('/home/summary')
-    cy.get('.glyphicon-user').click()
+    cy.get('.sprout-header-task-wrap > .ant-dropdown-trigger').click()
     cy.contains('Log out').click() 
     cy.clearCookies()
     cy.getCookies().should('be.empty')

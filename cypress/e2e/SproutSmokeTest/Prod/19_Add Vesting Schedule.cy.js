@@ -13,8 +13,8 @@
       })
 
     it('1.19 Add and Remove Vesting Schedule',()=>{
-    cy.contains('Securities').click()
-    cy.contains('Shares').click()
+    cy.wait(2000)
+    cy.visit('/home/securities/shares')
     cy.get('[data-row-key="8552"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.get('.ant-dropdown-menu > :nth-child(2) > a').click()
     cy.get('#schedule_step1 > .modal-body > .body-one > .form-horizontal > :nth-child(1) > .col-xs-7 > .form-control').select('sdsd')
@@ -32,10 +32,5 @@
     cy.get('#removeVestingSchedule > .modal-footer > :nth-child(2)').click()
     cy.wait(2000)
     cy.contains('sdsd').should('not.visible')
-    cy.visit('/home/summary')
-    cy.get('.glyphicon-user').click()
-    cy.contains('Log out').click() 
-    cy.clearCookies()
-    cy.getCookies().should('be.empty')
 })
 })

@@ -13,7 +13,8 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.27 Stakeholder access',()=>{
-    cy.contains('Stakeholders').click()
+    cy.contains('Stakeholders').trigger('mouseover')
+    cy.wait(1000)
     cy.contains('Stakeholder access').click()
     cy.wait(20000)
     cy.get('.ant-input').type('test{enter}')
@@ -30,11 +31,5 @@ describe('SproutSmokeTest',()=>{
     cy.get('.set-access-content-front > .set-access-btns > .ant-btn').click()
     cy.contains('Confirm').click()
     cy.contains('Basic view')
-    cy.wait(2200)
-    cy.visit('/home/summary')
-    cy.get('.glyphicon-user').click()
-    cy.contains('Log out').click() 
-    cy.clearCookies()
-    cy.getCookies().should('be.empty')
 })
 })

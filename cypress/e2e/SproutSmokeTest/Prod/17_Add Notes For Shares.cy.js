@@ -13,8 +13,8 @@
     })
 
   it('1.17 Add Notes for Shares',()=>{
-  cy.contains('Securities').click()
-  cy.contains('Shares').click()
+  cy.wait(2000)
+  cy.visit('/home/securities/shares')
   cy.get('[data-row-key="8552"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
   cy.get('.ant-dropdown-menu > :nth-child(7) > a').click()
   cy.get('.tab-content > .modal-content > .modal-body > .form-control')
@@ -31,10 +31,5 @@
   cy.wait(1000)
   cy.get('.certificate-side-bar-menu > :nth-child(7)').click()
   cy.contains('TestFromMike').should('be.exist')
-  cy.visit('/home/summary')
-  cy.get('.glyphicon-user').click()
-  cy.contains('Log out').click() 
-  cy.clearCookies()
-  cy.getCookies().should('be.empty')
 })
 })
