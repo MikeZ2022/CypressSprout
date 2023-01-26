@@ -23,6 +23,7 @@
        cy.contains('Security').should('be.exist')
        cy.contains('Stakeholders').trigger('mouseover')
        cy.contains('Stakeholder access').click()
+       cy.wait(14000)
        cy.contains('Rounds').should('be.exist')
        cy.wait(2000)
        cy.contains('Reports').trigger('mouseover')
