@@ -13,6 +13,7 @@
       })
 
     it('1.14 Modify a Certificate',()=>{
+    cy.wait(2000)
     cy.visit('/home/securities/shares')
     cy.get('[data-row-key="8548"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.contains('Modify certificate').click()
