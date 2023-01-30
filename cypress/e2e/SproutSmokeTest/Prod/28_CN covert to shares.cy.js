@@ -14,6 +14,7 @@ describe('SproutSmokeTest',()=>{
 
     it('1.28 Convertibles convert to shares',()=>{
     cy.contains('Securities').trigger('mouseover')
+    cy.wait(1000)
     cy.contains('Convertibles').click()
     cy.get('[data-row-key="8568"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.get('.ant-dropdown-menu > :nth-child(7) > a').click()

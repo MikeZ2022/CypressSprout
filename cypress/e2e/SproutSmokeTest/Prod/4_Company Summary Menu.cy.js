@@ -29,6 +29,7 @@ describe('SproutSmokeTest',()=>{
         cy.contains('Summary').click() 
         cy.get(':nth-child(2) > .ant-row > [style="padding-left: 10px; padding-right: 10px;"] > .message-card-root > .message-card-header > .glyphicon').click()
         cy.url().should('contains','/stakeholders/stakeholder-transactions')
+        cy.wait(15000)
         cy.contains('Company').trigger('mouseover')
         cy.contains('Summary').click() 
         cy.get(':nth-child(2) > .ant-row > [style="padding-left: 10px; padding-right: 10px; flex: 1 1 auto;"] > .message-card-root > .message-card-header > .glyphicon').click()
