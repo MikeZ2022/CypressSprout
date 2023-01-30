@@ -14,6 +14,7 @@ describe('SproutSmokeTest',()=>{
 
     it('1.26 Portfolio view',()=>{
     cy.contains('Securities').trigger('mouseover')
+    cy.wait(1000)
     cy.contains('Share option awards').click()
     cy.get('.ant-input').type('miketest{enter}')
     cy.contains('Canceled')

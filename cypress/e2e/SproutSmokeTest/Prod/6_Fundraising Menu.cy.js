@@ -15,6 +15,7 @@ describe('SproutSmokeTest',()=>{
 
       it('1.6 Fundraising Menu items check',()=>{
         cy.contains('Fundraising').trigger('mouseover')
+        cy.wait(1000)
         cy.contains('Financing history').click()
         cy.contains('Funding rounds').should('be.exist')
         cy.contains('Round').should('be.exist')
