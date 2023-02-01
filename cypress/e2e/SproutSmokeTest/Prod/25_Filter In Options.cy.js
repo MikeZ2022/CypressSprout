@@ -13,6 +13,7 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.25 Filter function in Options',()=>{
+    cy.wait(1000)
     cy.contains('Securities').trigger('mouseover')
     cy.contains('Share option awards').click()
     cy.get('.ant-badge > .ant-btn').click()

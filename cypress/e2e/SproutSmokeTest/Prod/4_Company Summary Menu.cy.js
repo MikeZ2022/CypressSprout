@@ -38,7 +38,7 @@ describe('SproutSmokeTest',()=>{
         cy.contains('Summary').click() 
         cy.get(':nth-child(3) > .ant-row > [style="padding-left: 10px; padding-right: 10px;"] > .message-card-root > .message-card-header > .glyphicon').click()
         cy.url().should('contains','/fundraise/financing-history')
-        cy.contains('Company').click()
+        cy.contains('Company').trigger('mouseover')
         cy.contains('Summary').click() 
         cy.get(':nth-child(3) > .ant-row > [style="padding-left: 10px; padding-right: 10px; flex: 1 1 auto;"] > .message-card-root > .message-card-header > .glyphicon').click()
         cy.url().should('contains','/fundraise/financing-history')
