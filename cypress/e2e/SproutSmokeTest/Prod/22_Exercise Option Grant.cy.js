@@ -13,6 +13,7 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.22 Exercise a option grant',()=>{
+    cy.wait(2000)
     cy.contains('Securities').trigger('mouseover')
     cy.contains('Share option awards').click()
     cy.get('[data-row-key="9638"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()

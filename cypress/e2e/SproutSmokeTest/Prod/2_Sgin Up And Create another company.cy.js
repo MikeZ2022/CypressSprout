@@ -12,7 +12,7 @@ describe('SproutSmokeTest',()=>{
       })
     
     it('1.2 Try to Sign Up using create another company',()=>{
-      cy.get('#menu-item-1637 > a').click()
+        cy.get('#menu-item-1637 > a').click()
         cy.url().should('contain','app.getsprout.co/auth/signup')
         cy.get('#user_name').type('TestFromMike')
         cy.wait(500)

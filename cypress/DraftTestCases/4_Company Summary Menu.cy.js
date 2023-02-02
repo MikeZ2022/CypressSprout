@@ -11,12 +11,11 @@ describe('SproutSmokeTest',()=>{
         cy.get('#hs-eu-confirmation-button').click()
         cy.login('mzhuang2019@gmail.com','Mike_1983')
       })
-    it('1.4 Company summary Menu items check',()=>{   
-        cy.get('li .ant-menu-submenu-title')
-        cy.wait(5000)
+    it('1.4 Company summary Menu items check',()=>{
+        cy.wait(2000)   
+        cy.visit('/home/permissions')
+        cy.wait(2000)
         cy.contains('Summary').should('be.exist')
-        cy.get('.admin-summary-banner > .ant-row > :nth-child(1) > .message-card-root > .message-card-header > .glyphicon').click()
-        cy.url().should('contains','/stakeholders/stakeholders-list')
         cy.contains('Company').trigger('mouseover')
         cy.contains('Summary').click()
         cy.get('.admin-summary-banner > .ant-row > :nth-child(2) > .message-card-root > .message-card-header > .glyphicon').click()

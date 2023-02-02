@@ -13,6 +13,7 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.26 Portfolio view',()=>{
+    cy.wait(2000)
     cy.contains('Securities').trigger('mouseover')
     cy.wait(1000)
     cy.contains('Share option awards').click()

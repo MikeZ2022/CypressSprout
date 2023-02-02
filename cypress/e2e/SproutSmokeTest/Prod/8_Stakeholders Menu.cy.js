@@ -14,6 +14,7 @@
          })
    
        it('1.8 Stakeholders Menu items check',()=>{
+       cy.wait(2000)
        cy.contains('Stakeholders').trigger('mouseover')
        cy.contains('Stakeholder').should('be.visible')
        cy.contains('All stakeholders').click()

@@ -12,6 +12,7 @@ describe('SproutSmokeTest',()=>{
         cy.login('mikez.test002@gmail.com','Mike_1983')
       })
     it('1.10 Company Editor login and permissions check',()=>{   
+        cy.wait(2000)
         cy.get('.ant-menu-submenu-selected > .ant-menu-submenu-title').trigger('mouseover')
         cy.contains('Summary').should('be.visible')  
         cy.contains('Permissions and roles').should('be.visible')

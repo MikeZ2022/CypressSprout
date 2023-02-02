@@ -13,6 +13,7 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.23 Filter function in Stakeholders',()=>{
+    cy.wait(2000)
     cy.contains('Stakeholders').click()
     cy.contains('All stakeholders').click()
     cy.wait(5000)

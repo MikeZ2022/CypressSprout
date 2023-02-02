@@ -13,6 +13,7 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.29 OPtions Covert to ipo',()=>{
+    cy.wait(2000)
     cy.contains('Securities').trigger('mouseover')
     cy.contains('Share option awards').click()
     cy.wait(1000)

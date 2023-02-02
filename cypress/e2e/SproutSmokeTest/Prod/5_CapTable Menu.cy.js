@@ -15,6 +15,7 @@ describe('SproutSmokeTest',()=>{
       })
     
       it('1.5 Cap Table Menu items Check',()=>{
+        cy.wait(2000)
         cy.contains('Cap table').trigger('mouseover')
         cy.contains('By share class').click()
         cy.contains('View cap table as of').should('be.exist')

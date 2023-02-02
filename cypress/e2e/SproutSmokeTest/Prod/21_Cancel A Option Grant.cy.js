@@ -13,7 +13,9 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.21 Cancel a Option Grant',()=>{
-    cy.contains('Securities').click()
+    cy.wait(2000)
+    cy.contains('Securities').trigger('mouseover')
+    cy.wait(2000)
     cy.contains('Share option awards').click()
     cy.get('[data-row-key="8771"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.get('.ant-dropdown-menu > :nth-child(4) > a').click()
