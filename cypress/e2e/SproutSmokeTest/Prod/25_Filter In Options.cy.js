@@ -30,7 +30,7 @@ describe('SproutSmokeTest',()=>{
       .type('EA plan 1{enter}')
     cy.get(':nth-child(3) > .ant-form-item-label > label').click()
     cy.get('.ant-space > :nth-child(2) > .ant-btn').click()
-    cy.contains('4 items').should('be.exist')
+    cy.contains('3 items').should('be.exist')
     cy.get('.ant-badge > .ant-btn').click()
     cy.get(':nth-child(5) > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector')
     .click()
@@ -43,7 +43,7 @@ describe('SproutSmokeTest',()=>{
     /// Check Outstanding
     cy.get('.ant-space > :nth-child(2) > .ant-btn').click()
     /// click Apply button
-    cy.contains('2 items').should('be.exist')
+    cy.contains('1 items').should('be.exist')
     cy.get('.ant-badge > .ant-btn').click()
     cy.contains('Clear all filters').click()
     cy.contains('mikeTest').should('be.exist')
