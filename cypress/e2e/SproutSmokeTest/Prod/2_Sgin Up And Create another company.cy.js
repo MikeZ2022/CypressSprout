@@ -55,6 +55,7 @@ describe('SproutSmokeTest',()=>{
         var timestamp = (new Date()).valueOf();
         cy.get('#company_name').type('MikeTest'+timestamp)
         cy.get('#company_size').type('11')
+        cy.get('.ant-btn').click()
         cy.clearCookies()
         cy.getCookies().should('be.empty')
       })

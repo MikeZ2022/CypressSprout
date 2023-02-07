@@ -29,7 +29,7 @@
   cy.contains('Feng Xu').click()
   cy.contains('CSB-2').click()
   cy.wait(1000)
-  cy.get('.certificate-side-bar-menu > :nth-child(7)').click()
+  cy.get('.certificate-side-bar-menu > :nth-child(8)').click()
   cy.contains('TestFromMike').should('be.exist')
 })
 })
