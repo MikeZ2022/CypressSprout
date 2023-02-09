@@ -29,8 +29,7 @@ describe('SproutSmokeTest',()=>{
     cy.contains('mzhuang2019@gmail.com').should('exist')
     cy.go('back')
     cy.get('.filter-item > .word-item').click()
-    cy.get('.portfolio-btns > :nth-child(3)').click()
-    
+    cy.get('.portfolio-btns > :nth-child(3)').click()    
     cy.contains('CSA').click()
     cy.contains('Feng Xu').click()
     cy.contains('CSA-2').click()
