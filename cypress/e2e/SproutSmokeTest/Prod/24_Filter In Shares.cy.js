@@ -15,6 +15,7 @@ describe('SproutSmokeTest',()=>{
     it('1.24 Filter function in Shares',()=>{
     cy.wait(2000)
     cy.visit('/home/securities/shares')
+    cy.wait(5000)
     cy.get('.ant-badge > .ant-btn').click()
     cy.get(':nth-child(1) > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector')
       .click()

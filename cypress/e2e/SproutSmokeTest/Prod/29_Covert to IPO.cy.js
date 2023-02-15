@@ -20,7 +20,7 @@ describe('SproutSmokeTest',()=>{
     cy.get('.draft-statistic-badge > .btn').click()
     cy.wait(1000)
     cy.get(':nth-child(2) > .btn').click()
-    cy.wait(1000)
+    cy.wait(10000)
     cy.get(':nth-child(2) > .prefer-togglebtn').click()
     cy.get('.equity-plan > #draft_option_type').select('EA Plan 2 (EA2)')
     cy.get(':nth-child(3) > .prefer-togglebtn').click()

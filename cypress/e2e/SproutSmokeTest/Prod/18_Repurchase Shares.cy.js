@@ -15,7 +15,7 @@
   it('1.18 Repurchase Shares',()=>{
   cy.wait(1000)
   cy.visit('home/securities/shares')
-  cy.wait(1000)
+  cy.wait(5000)
   cy.get('.draft-statistic-badge > .btn').click()
   cy.wait(1000)
   cy.get(':nth-child(2) > .btn').click()
