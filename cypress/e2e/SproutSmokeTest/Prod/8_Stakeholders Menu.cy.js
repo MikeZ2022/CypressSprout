@@ -38,8 +38,6 @@
        cy.contains('Meetings').should('be.exist')
        cy.contains('Consents').should('be.exist')
        cy.contains('Notifications').should('be.exist')
-       cy.get('.sprout-header-task-wrap > .ant-dropdown-trigger').click()
-       cy.contains('Log out').click() 
        cy.clearCookies()
        cy.getCookies().should('be.empty')
 })
