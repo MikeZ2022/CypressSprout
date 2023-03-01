@@ -14,12 +14,15 @@ describe('SproutSmokeTest',()=>{
     it('1.2 Try to Sign Up using create another company',()=>{
         cy.get('#menu-item-1637 > a').click()
         cy.url().should('contain','app.getsprout.co/auth/signup')
+        // Step 1: Click the Sign up button from Homepage, and check the website redirect to correct url
         cy.get('#user_name').type('TestFromMike')
         cy.wait(500)
         cy.get('#email').type('TestFromMike')
         cy.wait(500)
-        cy.get('.sprout-signup-input-box > .ant-btn').click() 
+        cy.get('.sprout-signup-input-box > .ant-btn').click()
+        // Step 2: Type sth in username and email filed and click the sign up button 
         cy.contains('Email is invalid').should('be.exist')
+        // Step 3:
         cy.get('#title').type('Mike_1983')
         cy.wait(500)
         cy.get('#company_name').type('TestCompany')

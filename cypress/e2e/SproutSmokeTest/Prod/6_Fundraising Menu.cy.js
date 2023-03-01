@@ -14,6 +14,7 @@ describe('SproutSmokeTest',()=>{
       })
 
       it('1.6 Fundraising Menu items check',()=>{
+        cy.wait(2000)
         cy.contains('Fundraising').trigger('mouseover')
         cy.wait(1000)
         cy.contains('Financing history').click()
@@ -24,13 +25,13 @@ describe('SproutSmokeTest',()=>{
         cy.contains('Security').should('be.exist')
         cy.contains('Fundraising').trigger('mouseover')
         cy.contains('Scenario modeling').click()
-        cy.wait(20000)
+        cy.wait(15000)
         cy.contains('Round Modeling').should('be.exist')
         cy.contains('Fundraising').trigger('mouseover')
         cy.contains('Waterfall').click()
         cy.contains('Create new Scenario model').should('be.exist')
         cy.get('.new-scenario-modeling-header > :nth-child(1) > span').click()
-        cy.wait(20000)
+        cy.wait(15000)
         cy.get('.new-financing-round-terms > span').click()
         cy.contains('Advanced Terms')
         cy.contains('Save Advanced Terms').click()

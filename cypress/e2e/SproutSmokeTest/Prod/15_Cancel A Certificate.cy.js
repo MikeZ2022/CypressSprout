@@ -15,7 +15,7 @@ describe('SproutSmokeTest',()=>{
     it('1.15 Cancel a Certificate',()=>{
     cy.wait(2000)
     cy.visit('/home/securities/shares')
-    cy.get('[data-row-key="8548"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
+    cy.get('[data-row-key="8561"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.get('.ant-dropdown-menu > :nth-child(5) > a').click()
     cy.get('#first_name > .ant-picker > .ant-picker-input > input').click()
     cy.contains('Today').click()
@@ -24,7 +24,7 @@ describe('SproutSmokeTest',()=>{
     cy.get('#cancel_step1 > .modal-footer > .btn').click()
     cy.get('#cancel_step2 > .modal-footer > .btn').click()
     cy.contains('Canceled').should('be.exist')
-    cy.get('[data-row-key="8548"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
+    cy.get('[data-row-key="8561"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.contains('Reverse cancellation').click()
     cy.visit('/home/summary')
 })

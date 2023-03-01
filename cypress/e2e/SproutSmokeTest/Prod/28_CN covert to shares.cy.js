@@ -13,7 +13,7 @@ describe('SproutSmokeTest',()=>{
       })
 
     it('1.28 Convertibles convert to shares',()=>{
-    cy.wait(2000)
+    cy.wait(1000)
     cy.contains('Securities').trigger('mouseover')
     cy.wait(1000)
     cy.contains('Convertibles').click()
@@ -21,7 +21,7 @@ describe('SproutSmokeTest',()=>{
     cy.get('.ant-dropdown-menu > :nth-child(7) > a').click()
     cy.wait(1000)
     cy.get(':nth-child(2) > .btn').click()
-    cy.wait(5000)
+    cy.wait(8000)
     cy.get(':nth-child(2) > .prefer-togglebtn').click()
     cy.get('#draft_share_class').select('Ordinary (CS)')
     cy.get(':nth-child(3) > .prefer-togglebtn').click()

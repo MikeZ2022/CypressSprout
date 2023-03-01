@@ -17,6 +17,7 @@ Cypress.Commands.add('login', (username, password) => {
         cy.get('#menu-item-1142').click()
         cy.get('.sprout-auth-form').find('[type="text"]').type(username)
         cy.get('.sprout-auth-form').find('[type="password"]').type(password)
+        cy.wait(1000)
         cy.get('.sprout-auth-bth').click()
     });
     Cypress.Commands.add('loginOnQA', (username, password) => {  

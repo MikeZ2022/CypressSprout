@@ -65,6 +65,6 @@ describe('SproutSmokeTest',()=>{
     cy.get('#keep_checkbox > .send-div').click()
     cy.get('#exercise_step1 > .modal-footer > .btn').click()
     cy.get('#exercise_step2 > .modal-footer > .btn').click()
-    
+    cy.wait(5000)
 })
 })

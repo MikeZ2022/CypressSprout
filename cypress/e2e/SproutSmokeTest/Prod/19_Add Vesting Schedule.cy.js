@@ -21,6 +21,7 @@
     cy.get('#vesting_start_date > .ant-picker > .ant-picker-input > input').click()
     cy.contains('Today').click()
     cy.get('#schedule_step1 > .modal-footer > .btn').click()
+    cy.wait(5000)
     cy.get('.form-horizontal > .form-group > #reason_for_modification > .form-control').type('Test From Mike')
     cy.get('#schedule_step2 > .modal-footer > .btn').click()
     cy.get('#schedule_step3 > .modal-footer > .btn').click()

@@ -9,9 +9,11 @@ describe('SproutSmokeTest',()=>{
         // we include it in our beforeEach function so that it runs before each test
         cy.viewport('macbook-13')
         cy.visit('https://app-staging.getsprout.co')
+        cy.get('#hs-eu-confirmation-button').click()
+        cy.login('mzhuang2019@gmail.com','Mike_1983')
       })
     
-    it('1.1 User Sgin in faled with wrong password then succced with correct one',()=>{
+    it('1.31 Check the data',()=>{
         cy.get('#menu-item-1142').click()
         cy.get('.sprout-auth-form').find('[type="text"]').type('mzhuang2019@gmail.com')
         cy.get('.sprout-auth-form').find('[type="password"]').type('Mike')

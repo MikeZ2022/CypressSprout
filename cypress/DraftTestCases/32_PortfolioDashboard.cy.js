@@ -12,7 +12,7 @@ describe('SproutSmokeTest',()=>{
         cy.login('mzhuang2019@gmail.com','Mike_1983')
       })
 
-    it('1.26 Portfolio view',()=>{
+    it('1.31 Portfolio Dashboard view',()=>{
     cy.get('.ant-dropdown-trigger > .sprout-header-avatar').click()
     cy.contains('See More Portfolios').click()
     cy.contains('Mike')
