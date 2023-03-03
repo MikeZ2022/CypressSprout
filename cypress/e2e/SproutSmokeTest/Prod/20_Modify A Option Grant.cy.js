@@ -35,7 +35,7 @@ describe('SproutSmokeTest',()=>{
     cy.contains('By share class').click()
     cy.contains('CSA').click()
     cy.contains('Anna Sun').click()
-    cy.contains('CSA-1').click()
+    cy.contains('CSA-30').click()
     cy.contains('1').should('be.exist')
     cy.visit('/home/securities/stock-option-awards')
     cy.wait(2000)

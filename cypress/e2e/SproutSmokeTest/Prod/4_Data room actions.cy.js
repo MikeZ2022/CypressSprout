@@ -20,33 +20,33 @@ describe('SproutSmokeTest',()=>{
       cy.contains('Summary').should('not.exist')  
       cy.contains('Permissions and roles').should('not.exist')
       cy.contains('Account users').should('not.exist')
-      //create a test folder to do test
+      //Step1: create a test folder to do test
       cy.get('.ant-space > :nth-child(1) > .ant-btn').click()
       cy.get('.form-control').type('TestFolder')
       cy.get('.btn').click()
       cy.wait(8000)
       cy.contains('TestFolder').click()
       cy.contains('Upload').click()
-      // add file to upload in data room
+      // Step2: add file to upload in data room
       cy.get('.ant-upload-drag > .ant-upload')
         .selectFile('cypress/fixtures/TestFromMike.txt',{ action: 'drag-drop' })
       cy.get('.modal-footer > :nth-child(2)').click()
       cy.wait(10000)
-      // verify the text file uploaded successfully
+      // Step3: verify the text file uploaded successfully
       cy.contains('TestFromMike')
-      //click to rename the new upload file
+      // Step4: click to rename the new upload file
       cy.get(':nth-child(3) > a').eq(0).click()
       cy.get('.form-control').type('NewNameForTest')
       cy.get('.btn').click()
       cy.wait(7000)
       cy.contains('NewNameForTest')
       cy.wait(1000)
-       //click to delete the new upload file
+      //Step5: click to delete the new upload file
       cy.get(':nth-child(5) > a').eq(0).click()
       cy.get('.modal-footer > :nth-child(1)').click()
       cy.wait(10000)
       cy.go('back')
-      //search all test folders/files, delete them all
+      //Step6: search all test folders/files, delete them all
       cy.get('.ant-input').type('Test')
       cy.get(':nth-child(5) > a').eq(0).click()
       cy.get('.modal-footer > :nth-child(1)').click()
