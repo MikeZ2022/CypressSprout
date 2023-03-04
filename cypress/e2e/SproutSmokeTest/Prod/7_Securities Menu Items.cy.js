@@ -2,10 +2,6 @@
 
  describe('SproutSmokeTest',()=>{
   beforeEach(() => {
-      // Cypress starts out with a blank slate for each test
-      // so we must tell it to visit our website with the `cy.visit()` command.
-      // Since we want to visit the same URL at the start of all our tests,
-      // we include it in our beforeEach function so that it runs before each test
       cy.viewport('macbook-16')
       cy.visit('https://www.getsprout.co')
       cy.get('#hs-eu-confirmation-button').click()
@@ -14,16 +10,20 @@
 
   it('1.7 Securities Menu items check',()=>{
   cy.wait(2000)
+  //Step1: Go to Shares menu, and check the main items text display correctly
   cy.visit('home/securities/shares')
   cy.contains('Manage share classes').should('be.exist')
   cy.contains('Manage vesting').should('be.exist')
   cy.contains('Draft shares').should('be.exist')
+  //Step2: Go to option menu, and check the main items text display correctly
   cy.contains('Securities').trigger('mouseover')
   cy.contains('Share option awards').click()
   cy.contains('Manage equity plans').should('be.exist')
+  //Step3: Go to Warrants menu, and check the main items text display correctly
   cy.contains('Securities').trigger('mouseover')
   cy.contains('Warrants').click()
   cy.contains('Manage warrant blocks').should('be.exist')
+  //Step4: Go to Convertibles menu, and ckeck the main items text display correctly
   cy.contains('Securities').trigger('mouseover')
   cy.contains('Convertibles').click()
   cy.contains('Manage convertible terms').should('be.exist')

@@ -2,10 +2,6 @@
 
 describe('SproutSmokeTest',()=>{
     beforeEach(() => {
-        // Cypress starts out with a blank slate for each test
-        // so we must tell it to visit our website with the `cy.visit()` command.
-        // Since we want to visit the same URL at the start of all our tests,
-        // we include it in our beforeEach function so that it runs before each test
         cy.viewport('macbook-16')
         cy.visit('https://www.getsprout.co')
         cy.get('#hs-eu-confirmation-button').click()
@@ -14,11 +10,13 @@ describe('SproutSmokeTest',()=>{
 
     it('1.29 OPtions Covert to ipo',()=>{
     cy.wait(2000)
+    //Step1: Login and go to Options page, create a new option from Draft Options button
     cy.contains('Securities').trigger('mouseover')
     cy.contains('Share option awards').click()
     cy.wait(1000)
     cy.get('.draft-statistic-badge > .btn').click()
     cy.wait(1000)
+    //Setp2: Type required field in creating option menu, like select EA Plan 2 (EA2) in the Equity plan and number is '1'
     cy.get(':nth-child(2) > .btn').click()
     cy.wait(10000)
     cy.get(':nth-child(2) > .prefer-togglebtn').click()
@@ -35,10 +33,12 @@ describe('SproutSmokeTest',()=>{
     cy.wait(3000)
     cy.get('#doc_select1').selectFile('cypress/fixtures/TestFromMike.pdf')
     cy.wait(2000)
+    //Step3: After typed all required fields, send to approve 
     cy.get('.ant-table-selection > .ant-checkbox-wrapper').click()
     cy.get('.form-group > :nth-child(3) > .btn').click()
     cy.get('.captable-footer > .btn').click()
     cy.wait(5000)
+    //Step4: wait until the approval pop up notification shows up and click to Sign the new create certificate from step2
     cy.get('.sprout-task-tip-btns > .ant-btn').click()
     cy.get('.ant-dropdown-trigger.sprout-header-task').click()
     cy.contains('Sign certificate').click()
@@ -49,12 +49,14 @@ describe('SproutSmokeTest',()=>{
     cy.contains('Test company Mike').click()
     cy.contains('See More Companies').click()
     cy.get(':nth-child(2) > .filter-item > .word-item').click()
+    //Step5: find the new create certificate using filter
     cy.visit('home/securities/stock-option-awards')
     cy.get('.ant-badge > .ant-btn').click()
     cy.get('.ant-checkbox-group > :nth-child(11) > :nth-child(2)').click()
     cy.get('.ant-space > :nth-child(2) > .ant-btn').click()
     cy.get('.ant-input').type('Anna sun{enter}')
     cy.wait(5000)
+    //Step6: Open the menu of this certificate, and mark the convert to ipo button, save it
     cy.get('.ant-table-cell-fix-right > .ant-dropdown-trigger').eq(0).click()
     cy.get('.ant-dropdown-menu > :nth-child(3) > a').click()
     cy.get('#exercise_step1 > .modal-body > .body-one > .form-horizontal > :nth-child(1) > .col-xs-5 > .ant-picker > .ant-picker-input > input').click()

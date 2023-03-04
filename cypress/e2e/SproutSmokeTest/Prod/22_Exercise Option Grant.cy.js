@@ -2,10 +2,6 @@
 
 describe('SproutSmokeTest',()=>{
     beforeEach(() => {
-        // Cypress starts out with a blank slate for each test
-        // so we must tell it to visit our website with the `cy.visit()` command.
-        // Since we want to visit the same URL at the start of all our tests,
-        // we include it in our beforeEach function so that it runs before each test
         cy.viewport('macbook-13')
         cy.visit('https://www.getsprout.co')
         cy.get('#hs-eu-confirmation-button').click()
@@ -14,6 +10,7 @@ describe('SproutSmokeTest',()=>{
 
     it('1.22 Exercise a option grant',()=>{
     cy.wait(2000)
+    //Step1: go to options page, and find a certain option, click the exercise option button
     cy.contains('Securities').trigger('mouseover')
     cy.contains('Share option awards').click()
     cy.get('[data-row-key="9638"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
@@ -28,8 +25,11 @@ describe('SproutSmokeTest',()=>{
       .wait(1000)
       .trigger('mousedown,bottom')
     cy.get('#exercise_step2 > .modal-footer > .btn').click()
+    //Step2: the option status changed to 'Partially exercised'
     cy.contains('Partially exercised').should('be.exist')
+    //Step3: reload the page and wait the sign exercise option notification pop up
     cy.reload()
+    //Step4: signed the exercise option
     cy.get('.sprout-task-tip-btns > .ant-btn').click()
     cy.get('.ant-dropdown-trigger.sprout-header-task').click()
     cy.contains('Sign certificate').click()

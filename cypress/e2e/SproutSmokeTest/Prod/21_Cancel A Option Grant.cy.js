@@ -2,10 +2,6 @@
 
 describe('SproutSmokeTest',()=>{
     beforeEach(() => {
-        // Cypress starts out with a blank slate for each test
-        // so we must tell it to visit our website with the `cy.visit()` command.
-        // Since we want to visit the same URL at the start of all our tests,
-        // we include it in our beforeEach function so that it runs before each test
         cy.viewport('macbook-16')
         cy.visit('https://www.getsprout.co')
         cy.get('#hs-eu-confirmation-button').click()
@@ -14,9 +10,11 @@ describe('SproutSmokeTest',()=>{
 
     it('1.21 Cancel a Option Grant',()=>{
     cy.wait(2000)
+    //Step1: go to options page, and find a certain option
     cy.contains('Securities').trigger('mouseover')
     cy.wait(2000)
     cy.contains('Share option awards').click()
+    //Step2: click the cancel option from menu, and fufill the required field
     cy.get('[data-row-key="8771"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.get('.ant-dropdown-menu > :nth-child(4) > a').click()
     cy.get('#first_name > .ant-picker > .ant-picker-input > input').click()
@@ -28,6 +26,7 @@ describe('SproutSmokeTest',()=>{
     cy.get('#cancel_step1 > .modal-footer > .btn').click()
     cy.wait(2000)
     cy.get('#cancel_step2 > .modal-footer > .btn').click()
+    //Step3: check the option changed to canceled, and changed it back
     cy.contains('Canceled').should('be.exist')
     cy.get('[data-row-key="8771"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.contains('Reverse cancellation').click()

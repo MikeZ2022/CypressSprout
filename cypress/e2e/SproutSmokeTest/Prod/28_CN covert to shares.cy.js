@@ -2,10 +2,6 @@
 
 describe('SproutSmokeTest',()=>{
     beforeEach(() => {
-        // Cypress starts out with a blank slate for each test
-        // so we must tell it to visit our website with the `cy.visit()` command.
-        // Since we want to visit the same URL at the start of all our tests,
-        // we include it in our beforeEach function so that it runs before each test
         cy.viewport('macbook-16')
         cy.visit('https://www.getsprout.co')
         cy.get('#hs-eu-confirmation-button').click()
@@ -14,12 +10,14 @@ describe('SproutSmokeTest',()=>{
 
     it('1.28 Convertibles convert to shares',()=>{
     cy.wait(1000)
+    //Step1: Go to Convertibles, open the menu, and click Convert to shares(This CN have about 10000 shares, every time this case run, the number will reduce -1, so after 10000 times run, will need a new CN to run this case)
     cy.contains('Securities').trigger('mouseover')
     cy.wait(1000)
     cy.contains('Convertibles').click()
     cy.get('[data-row-key="8568"] > .ant-table-cell-fix-right > .ant-dropdown-trigger').click()
     cy.get('.ant-dropdown-menu > :nth-child(7) > a').click()
     cy.wait(1000)
+    //Step2: fulfile the required fields and choose convert '1' Convertible to Share with paid '1'
     cy.get(':nth-child(2) > .btn').click()
     cy.wait(8000)
     cy.get(':nth-child(2) > .prefer-togglebtn').click()
@@ -44,12 +42,14 @@ describe('SproutSmokeTest',()=>{
     cy.get('.form-group > :nth-child(3) > .btn').click()
     cy.get('.captable-footer > .btn').click()
     cy.wait(5000)
+    //Step3: wait the new create certificate pop up notification, and click to sign the certificate
     cy.get('.sprout-task-tip-btns > .ant-btn').click()
     cy.get('.ant-dropdown-trigger.sprout-header-task').click()
     cy.contains('Sign certificate').click()
     cy.get('.ant-table-selection-column > .ant-checkbox-wrapper > .ant-checkbox > .ant-checkbox-input').click()
     cy.get('.task-sign-btns > .ant-btn').click()
     cy.get('.signature-btn-wrap > .ant-btn').click()
+    //Step4: reload the page, and check the main CN status, then reverse cancellation
     cy.reload()
     cy.wait(5000)
     cy.contains('Test company Mike').click()

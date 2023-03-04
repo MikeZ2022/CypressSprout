@@ -2,10 +2,6 @@
 
 describe('SproutSmokeTest',()=>{
     beforeEach(() => {
-        // Cypress starts out with a blank slate for each test
-        // so we must tell it to visit our website with the `cy.visit()` command.
-        // Since we want to visit the same URL at the start of all our tests,
-        // we include it in our beforeEach function so that it runs before each test
         cy.viewport('macbook-16')
         cy.visit('https://www.getsprout.co')
         cy.get('#hs-eu-confirmation-button').click()
@@ -14,6 +10,7 @@ describe('SproutSmokeTest',()=>{
 
     it('1.27 Stakeholder access',()=>{
       cy.wait(2000)
+      //Step1: Go to Stakeholder access page, and find a stakeholder, change the access view to 'Detailed view'
       cy.contains('Stakeholders').trigger('mouseover')
       cy.wait(1000)
       cy.contains('Stakeholder access').click()
@@ -26,6 +23,7 @@ describe('SproutSmokeTest',()=>{
       cy.contains('Confirm').click()
       cy.wait(20000)
       cy.contains('Detailed view')
+      //Step2: Find the same stakeholder and change the view back to Basic View
       cy.get('[data-row-key="5597"] > .ant-table-selection-column > .ant-checkbox-wrapper').click()
       cy.get('.captable-access-banner > :nth-child(1)').click()
       cy.get(':nth-child(2) > .ant-radio-wrapper > :nth-child(2) > .name').click()
