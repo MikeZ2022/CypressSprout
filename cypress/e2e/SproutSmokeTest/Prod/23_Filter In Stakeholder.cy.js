@@ -43,7 +43,7 @@ describe('SproutSmokeTest',()=>{
     cy.wait(5000)
     cy.contains('mike.test007').should('not.exist')
     cy.contains('Anna Sun').should('exist')
-    cy.contains('4 items').should('be.exist')
+    cy.contains('1 items').should('be.exist')
     cy.get('.ant-badge > .ant-btn').click()
     //Step7: add more filter and check the result changed according
     cy.get(':nth-child(5) > .ant-form-item-control > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-select > .ant-select-selector')

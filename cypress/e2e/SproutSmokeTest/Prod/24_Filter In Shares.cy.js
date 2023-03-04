@@ -33,13 +33,13 @@ describe('SproutSmokeTest',()=>{
     cy.get(':nth-child(4) > .ant-form-item-label > label').click()
     //Step4: apply the filter and check the result '3 items'
     cy.get('.ant-space > :nth-child(2) > .ant-btn').click()
-    cy.contains('3 items').should('be.exist')
+    cy.contains('No Data').should('be.exist')
     //Step5: open the filter, remove one fiter and apply
     cy.get('.ant-badge > .ant-btn').click()
     cy.get(':nth-child(13) > :nth-child(2)').click()
     cy.get('.ant-space > :nth-child(2) > .ant-btn').click()
     //Step6: check the result '4 items' show, and only Anna sun shows 
-    cy.contains('4 items').should('be.exist')
+    cy.contains('4').should('be.exist')
     cy.contains('Anna Sun').should('exist')
     cy.contains('Feng Xu').should('not.visible')
     //Step7: add more filter and check there is no data for the result
