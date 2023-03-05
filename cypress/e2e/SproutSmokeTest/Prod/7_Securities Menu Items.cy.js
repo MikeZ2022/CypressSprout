@@ -17,6 +17,7 @@
   cy.contains('Draft shares').should('be.exist')
   //Step2: Go to option menu, and check the main items text display correctly
   cy.contains('Securities').trigger('mouseover')
+  cy.wait(1000)
   cy.contains('Share option awards').click()
   cy.contains('Manage equity plans').should('be.exist')
   //Step3: Go to Warrants menu, and check the main items text display correctly
