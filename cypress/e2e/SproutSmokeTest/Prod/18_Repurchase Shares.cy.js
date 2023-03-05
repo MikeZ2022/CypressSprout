@@ -10,12 +10,14 @@
 
   it('1.18 Repurchase Shares',()=>{
   cy.wait(1000)
+  //Step1: Go to shares page, click Draft options
   cy.visit('home/securities/shares')
   cy.wait(5000)
   cy.get('.draft-statistic-badge > .btn').click()
   cy.wait(1000)
   cy.get(':nth-child(2) > .btn').click()
   cy.wait(2000)
+  //Step2: type and select all required field to create a new certificate
   cy.get(':nth-child(2) > .prefer-togglebtn').click()
   cy.get('#draft_share_class').select('Series A (PSA)')
   cy.wait(1000)
@@ -35,6 +37,7 @@
   cy.get('.form-group > :nth-child(3) > .btn').click()
   cy.wait(1000)
   cy.get('.captable-footer > .btn').click()
+  //Step3: Wait the new certificate notification pop up and 'Sign certificate'
   cy.wait(5000)
   cy.get('.sprout-task-tip-btns > .ant-btn').click()
   cy.get('.ant-dropdown-trigger.sprout-header-task').click()
@@ -46,6 +49,7 @@
   cy.contains('Test company Mike').click()
   cy.contains('See More Companies').click()
   cy.get(':nth-child(2) > .filter-item > .word-item').click()
+  //Step4: Go to Shares page and find the new create certificate via filter
   cy.visit('home/securities/Shares')
   cy.wait(5000)
   cy.get('.ant-badge > .ant-btn').click()
@@ -57,6 +61,7 @@
     .click()
   cy.get('.ant-checkbox-group > :nth-child(11) > :nth-child(2)').click()
   cy.get('.ant-space > :nth-child(2) > .ant-btn').click()
+  //Step5: open the menu of the certificate, and click 'Repurchase shares', reason choose 'Buyback', date choose 'Today',quantiy type'1' and value type'1'
   cy.get('.ant-table-cell-fix-right > .ant-dropdown-trigger').eq(0).click()
   cy.get('.ant-dropdown-menu > :nth-child(3) > a').click()
   cy.get('#repurchase_reason > .form-control').select('Buyback')
@@ -67,6 +72,7 @@
   cy.wait(3000)
   cy.get('#repurchase-select').click()
   cy.wait(2000)
+  // Step6: select file for repurchase share and click to agree to repurchase the share
   cy.get('#repurchase-select').selectFile('cypress/fixtures/TestFromMike.pdf')
   cy.wait(2000)
   cy.get('#repurchase-step1 > .modal-footer > .btn').click()
