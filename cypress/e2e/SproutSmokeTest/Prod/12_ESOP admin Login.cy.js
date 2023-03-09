@@ -16,7 +16,11 @@ describe('SproutSmokeTest',()=>{
         cy.wait(2000)
         //Step2: go to data room, check the prepared folder PGA-111 (invited by another super admin account) is visible
         cy.contains('Data room').click()
-        cy.contains('PGA-111').should('be.visible')
+        cy.get('.name')
+          .should('have.text','Securities')
+          .click()
+        cy.contains('EA Plan 2').click()
+        cy.contains('EA2-1').should('be.visible')
         //Step3: Esop admin user can see Cap table and Securities menu
         cy.contains('Cap table').should('be.visible')
         cy.contains('Securities').should('be.visible')

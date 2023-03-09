@@ -23,6 +23,7 @@
     cy.get(':nth-child(2) > .table > tbody > :nth-child(4) > :nth-child(3) > .form-control').type('1')
     cy.get('#modifyValue > .modal-footer > .btn').click()
     cy.get('#reviewModifications > .modal-footer > .btn').click()
+    cy.wait(1000)
     cy.get('#reviewModifications > .modal-header > .close').click()
     cy.wait(1000)
     //Step4: check number 1 shows in the shares page
